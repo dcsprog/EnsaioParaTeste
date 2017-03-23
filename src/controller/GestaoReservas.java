@@ -9,8 +9,12 @@ import model.Reserva;
 public class GestaoReservas {
 	
 	Scanner n = new Scanner(System.in);
-	
 	MockupData bd = new MockupData();
+	
+	
+	public GestaoReservas(){
+		
+	}
 	
 	public void addReserva(int idReserva, Cliente c, String prato, String data){
 		
@@ -27,11 +31,9 @@ public class GestaoReservas {
 			if(idReserva==bd.reserva.get(i).getIdReserva()){
 				for(int j=0;j<bd.cliente.size();j++){
 					if(idCliente==bd.cliente.get(j).getIdCliente()){
-						System.out.print("NUMERO DE RESERVA: "+bd.reserva.get(i).getIdReserva());
-						System.out.print("NUMERO DE RESERVA: "+bd.reserva.get(i).getResPrato());
-						System.out.println("NUMERO DE CLIENTE: "+bd.cliente.get(j).getEmailCliente());
-						System.out.println("NOME DO CLIENTE: "+bd.cliente.get(j).getNomeCliente());
-						System.out.println("MORADA DO CLIENTE: "+bd.cliente.get(j).getMoradaCliente());
+						System.out.println("NUMERO DE RESERVA: "+bd.reserva.get(i).getIdReserva());
+						System.out.println("PRATO RESERVADO: "+bd.reserva.get(i).getResPrato());
+						System.out.println("RESERVA EM NOME DE: "+bd.cliente.get(j).getNomeCliente());
 						System.out.println("EMAIL DO CLIENTE: "+bd.cliente.get(j).getEmailCliente());
 						System.out.println("CONTACTO DO CLIENTE: "+bd.cliente.get(j).getContactoCliente());
 						Thread.sleep(1000);

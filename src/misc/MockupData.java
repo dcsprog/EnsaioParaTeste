@@ -9,9 +9,9 @@ import model.Restaurante;
 
 public class MockupData {
 
-	public ArrayList<Cliente> cliente;
-	public ArrayList<Restaurante> restaurante;
-	public ArrayList<Reserva> reserva;
+	public static ArrayList<Cliente> cliente;
+	public static ArrayList<Restaurante> restaurante;
+	public static ArrayList<Reserva> reserva;
 
 	
 	public MockupData(){

@@ -20,12 +20,11 @@ public class Interface {
 	
 	public void menu(){
 		System.out.println("BEM VINDO AO BOOKINGMEAL");
-		System.out.println();
 		System.out.println(" 1 - REGISTAR CLIENTE   ");
-		System.out.println();
-		System.out.println(" 2 - REGISTAR RESERVA");
-		System.out.println();
-		System.out.println(" 3 - SAIR");
+		System.out.println(" 2 - LISTAR CLIENTE   ");
+		System.out.println(" 3 - REGISTAR RESERVA");
+		System.out.println(" 4 - LISTAR RESERVA   ");
+		System.out.println(" 5 - SAIR");
 		System.out.println();
 		System.out.println("    ESCOLHA UMA OPCAO");
 	}
@@ -55,16 +54,19 @@ public class Interface {
 	public void regRev(){
 		
 		System.out.println("INSIRA O ID DO CLIENTE: ");
+		/*n.nextLine();*/
 		int id=n.nextInt();
+		id-=1;
 		for(int i=0;i<bd.cliente.size();i++){
 			if(id==bd.cliente.get(i).getIdCliente()){
 				Cliente c=new Cliente(bd.cliente.get(i).getIdCliente(),bd.cliente.get(i).getNomeCliente(),
 						bd.cliente.get(i).getMoradaCliente(),bd.cliente.get(i).getEmailCliente(),bd.cliente.get(i).getContactoCliente());
+				n.nextLine();
 				System.out.println("INSIRA O PRATO DA RESERVA: ");
 				String prato = n.nextLine();
 				System.out.println("INSIRA A DATA DA RESERVA: ");
 				String data = n.nextLine();
-				r.addReserva(bd.reserva.size(), c, prato, data);
+				r.addReserva(bd.reserva.size()+1, c, prato, data);
 				
 			}
 		}

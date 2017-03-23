@@ -12,15 +12,13 @@ public class GestaoCliente {
 	MockupData bd = new MockupData();
 	
 	public GestaoCliente(){
-		
-		
-		
+				
 	}
 	
 	public void addCli(String nome, String morada,String email, String telefone){
 		
-		Cliente c = new Cliente(bd.cliente.size(),nome,morada,email,telefone);
-		bd.cliente.add(c);
+		Cliente c = new Cliente(MockupData.cliente.size(),nome,morada,email,telefone);
+		MockupData.cliente.add(c);
 
 		
 	}

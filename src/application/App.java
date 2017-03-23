@@ -30,7 +30,14 @@ public class App {
 				i.listCli();
 				break;
 			case 3:
+				i.regRev();
+				break;
+			case 4:
+				i.listRes();
+				break;
+			case 5:
 				verf=false;
+				break;
 			default:
 				break;
 			}
