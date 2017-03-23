@@ -3,11 +3,17 @@ package view;
 import java.util.Scanner;
 
 import controller.GestaoCliente;
+import controller.GestaoReservas;
+import misc.MockupData;
+import model.Cliente;
 
 public class Interface {
 
 	static Scanner n=new Scanner(System.in);
 	static GestaoCliente g = new GestaoCliente();
+	static GestaoReservas r = new GestaoReservas();
+	static MockupData bd = new MockupData();
+	
 	public Interface(){
 		
 	}
@@ -25,7 +31,6 @@ public class Interface {
 	}
 	
 	public void regCli(){
-		
 		
 		System.out.println("INSIRA O NOME DO CLIENTE: ");
 		String nome = n.nextLine();
@@ -46,4 +51,32 @@ public class Interface {
 		g.listarCliId(id);
 		
 	}
+	
+	public void regRev(){
+		
+		System.out.println("INSIRA O ID DO CLIENTE: ");
+		int id=n.nextInt();
+		for(int i=0;i<bd.cliente.size();i++){
+			if(id==bd.cliente.get(i).getIdCliente()){
+				Cliente c=new Cliente(bd.cliente.get(i).getIdCliente(),bd.cliente.get(i).getNomeCliente(),
+						bd.cliente.get(i).getMoradaCliente(),bd.cliente.get(i).getEmailCliente(),bd.cliente.get(i).getContactoCliente());
+				System.out.println("INSIRA O PRATO DA RESERVA: ");
+				String prato = n.nextLine();
+				System.out.println("INSIRA A DATA DA RESERVA: ");
+				String data = n.nextLine();
+				r.addReserva(bd.reserva.size(), c, prato, data);
+				
+			}
+		}
+	}
+	
+	public void listRes() throws InterruptedException{
+		System.out.println("INSIRA O ID DA RESERVA: ");
+		int idR = n.nextInt();
+		System.out.println("INSIRA O ID DO CLIENTE: ");
+		int idC = n.nextInt();
+		r.listarReserva(idR, idC);
+	}
+	
+	
 }

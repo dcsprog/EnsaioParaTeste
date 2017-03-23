@@ -21,6 +21,7 @@ public class GestaoCliente {
 		
 		Cliente c = new Cliente(bd.cliente.size(),nome,morada,email,telefone);
 		bd.cliente.add(c);
+
 		
 	}
 	
