@@ -78,6 +78,8 @@ public class Interface {
 		System.out.println("INSIRA O ID DO CLIENTE: ");
 		int idC = n.nextInt();
 		r.listarReserva(idR, idC);
+		System.out.println("FOR DE OBJETOS EXPLICADO 29/03/2017");
+		r.listarReservas(idR, idC);
 	}
 	
 	

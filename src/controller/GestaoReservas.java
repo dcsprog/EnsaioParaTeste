@@ -11,7 +11,6 @@ public class GestaoReservas {
 	Scanner n = new Scanner(System.in);
 	MockupData bd = new MockupData();
 	
-	
 	public GestaoReservas(){
 		
 	}
@@ -43,6 +42,28 @@ public class GestaoReservas {
 			}
 			
 		}
+	}
+	
+	//for de objetos
+	
+	public void listarReservas(int idReserva, int idCliente) throws InterruptedException{
+		idReserva-=1;
+		idCliente-=1;
+		for(Reserva r : bd.reserva){
+			if(idReserva == bd.reserva.get(idReserva).getIdReserva()){
+				for(Cliente cli : bd.cliente){
+					if(idCliente == bd.cliente.get(idCliente).getIdCliente()){
+						System.out.println("NUMERO DE RESERVA: "+bd.reserva.get(idCliente).getIdReserva());
+						System.out.println("PRATO RESERVADO: "+bd.reserva.get(idCliente).getResPrato());
+						System.out.println("RESERVA EM NOME DE: "+bd.cliente.get(idCliente).getNomeCliente());
+						System.out.println("EMAIL DO CLIENTE: "+bd.cliente.get(idCliente).getEmailCliente());
+						System.out.println("CONTACTO DO CLIENTE: "+bd.cliente.get(idCliente).getContactoCliente());
+						Thread.sleep(1000);
+					}
+				}
+			}
+		}
+		
 	}
 	
 }
